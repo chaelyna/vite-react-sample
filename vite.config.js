@@ -3,5 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
     plugins: [react()],
-    server: { port: 5173, open: true } // ← 5173 고정 + 자동 오픈
+    base: '/vite-react-sample/', // 여기에 실제 저장소 이름 입력
+    build: {
+        outDir: 'dist'
+    }
+
 })

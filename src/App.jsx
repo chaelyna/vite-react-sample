@@ -1,15 +1,21 @@
 import Header from './components/Header.jsx';
-import ProductCarousel from './components/ProductCarousel.jsx';
+import ProductCard from './components/ProductCard.jsx';
 import Cart from './components/Cart.jsx';
+import products from './data/products.js';
+import './index.css';
 
 export default function App() {
   return (
     <>
       <Header />
-      <main>
-        <ProductCarousel />
+      <div className="layout">
+        <div className="product-grid">
+          {products.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
         <Cart />
-      </main>
+      </div>
     </>
   );
 }

@@ -1,11 +1,7 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: '/vite_react2/', // 여기에 실제 저장소 이름 입력
-  build: {
-    outDir: 'dist'
-  }
+    plugins: [react()],
+    server: { port: 5173, open: true } // ← 5173 고정 + 자동 오픈
 })
